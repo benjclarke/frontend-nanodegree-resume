@@ -19,4 +19,4 @@ var bio = {
 
 $("#header").append(formattedName);
 $("#header").append(formattedRole);
-$("#main").append(bio);
+$("#main").append(bio.name);
