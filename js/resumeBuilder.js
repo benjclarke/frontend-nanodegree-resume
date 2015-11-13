@@ -18,7 +18,9 @@ var bio = {
 	"skills": ["leadership", "sales", "python", "data science" ], 
 	"picture": "/pictures/ben.jpg" 
 
-}
+};
+
+$("main").append(HTMLmobile);
 
 $("#header").append(formattedName);
 $("#header").append(formattedRole);
