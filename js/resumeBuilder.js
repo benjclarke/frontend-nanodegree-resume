@@ -26,6 +26,7 @@ $("#header").append(formattedRole);
 var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile); 
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
  
+console.log(bio.welcomeMessage);
 $("header").append(formattedMobile); 
 $("main").append(formattedWelcomeMessage); 
 
