@@ -10,6 +10,9 @@ var bio = {
 		"phone": "614-607-1010", 
 		"address": "580 North Fourth Street", 
 		"email": "name@email.com", 
+		"github": "BenClarke", 
+		"twitter": "No Twitter", 
+		"location": "LA", 
 		}, 
 		"welcomeMessage" : "Welcome to the Internet", 
 	"skills": ["leadership", "sales", "python", "data science" ], 
@@ -19,4 +22,10 @@ var bio = {
 
 $("#header").append(formattedName);
 $("#header").append(formattedRole);
-$("#main").append(bio.name);
+
+var formattedContactInfo = HTMLcontactGeneric.replace("%data%", bio.contact_info);
+var formattedMobile = HTMLmobile.replace("%data%", bio.contact_info.mobile); 
+
+$("main").append(formattedContactInfo); 
+$("main").append(formattedMobile); 
+
