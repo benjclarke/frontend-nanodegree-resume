@@ -24,44 +24,40 @@ var bio = {
 };
 
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile); 
-var formattedAddress = HTMLcontactGeneric.replace("%data%", bio.contact.address);
-var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-var formattedGitHub = HTMLgithub.replace("%data%", bio.contact.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedImage = HTMLbioPic.replace("%data%", bio.picture); 
-
-
-$("#header").append(formattedMobile);
-$("#header").append(formattedAddress);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGitHub);
-$("#header").append(formattedTwitter);
-$("#header").append(formattedLocation); 
-$("#header").append(formattedWelcomeMessage); 
-$("#header").append(formattedImage);
-
 var work = new Object()
 
 work.position = "Regular Jo";
 work.employer = "Genormous";
 work.years = 1;
 work.location = "Ohio";
-
-var formattedPosition = HTMLworkTitle.replace("%data%", work["position"]);
-
-$("#header").append(formattedPosition);
-
-var education = new Object()
-
-education["lastSchool"] = "OSU";
-education["dates"] = "2004-2009";
-education["city"] = "Columbus";
-
-var formattedSchoolName = HTMLschoolName.replace("%data%", education["lastSchool"]);
-
-$("#header").append(formattedSchoolName);
+work.description = "worked as a guy building out suppliers";
 
 
+var education = {
+    "schools": [
+        {
+            "name": "Ohio State",
+            "city": "Columbus",
+            "degree": "BS",
+            "major": "Genetics",
+            "minor": "finance",
+            "graduated": "2009"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Front End Developer Program",
+            "school": "Udacity",
+            "dates": 2015,
+            "url": "udacity.com"
+        }
+    ]
+}
+
+var project = {
+	"title": "My Test Project",
+	"start": 2015,
+	"description": "a resume project for myself",
+	"dates": "April 2016",
+	"url": "http://placehold.it/350X150"
+}
