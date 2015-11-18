@@ -6,6 +6,8 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 $("#header").append(formattedName);
 $("#header").append(formattedRole);
 
+$("#main").append(internationalizeButton);
+
 var bio = {
 	"name": "Benjamin Clarke", 
 	"role": "Person", 
@@ -24,14 +26,18 @@ var bio = {
 };
 
 
-var work = new Object()
+var work = {
 
-work.position = "Regular Jo";
-work.employer = "Genormous";
-work.years = 1;
-work.location = "Ohio";
-work.description = "worked as a guy building out suppliers";
-
+	jobs: [
+	{
+"position": "Regular Jo",
+"employer": "Genormous",
+"dates": "2014-2015",
+"location": "Ohio",
+"description": "worked as a guy building out suppliers"
+		}
+	]
+};
 
 var education = {
     "schools": [
@@ -73,4 +79,14 @@ if (bio.skills.length > 0) {
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 
+}
+
+for (var key in work[jobs]) {
+	if(work.hasOwnProperty(key)) {
+	$("#workExperience").append(HTMLworkStart);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[key].position);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[key].employer);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+	$(".work-entry:last").append(formattedEmployerTitle);
+	}
 }
