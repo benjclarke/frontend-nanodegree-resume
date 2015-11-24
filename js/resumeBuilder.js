@@ -3,10 +3,6 @@
 //var role = "Developer";
 //var formattedRole = HTMLheaderRole.replace("%data%", role);
 
-
-
-$("#main").append(internationalizeButton);
-
 var bio = {
 	"name": "Benjamin Clarke", 
 	"role": "Person", 
