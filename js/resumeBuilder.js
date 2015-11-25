@@ -71,7 +71,6 @@ var education = {
             "degree": "BS",
             "major": "Genetics",
             "dates": "2009",
-            "url": "www.osu.edu"
         }
     ],
 
@@ -83,8 +82,26 @@ var education = {
             "url": "udacity.com"
         }
     ],
-    //display: function() {
+    display: function() {
+    	if (education.schools.length && education.onlineCourses.length > 0) {
 
+    		for(var i = 0; i < education.schools.length; i++) {
+    			$('#education').append(HTMLschoolStart);
+    			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name);
+    			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+    			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+    			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
+    			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
+    			$(".education-entry:last").append(formattedSchoolName);
+    			$(".education-entry:last").append(formattedSchoolDegree);
+    			$(".education-entry:last").append(formattedSchoolLocation);
+    			$(".education-entry:last").append(formattedSchoolDates);
+    			$(".education-entry:last").append(formattedSchoolMajor);
+    		}
+    	}
+    }
+
+//education.display();
 
     }
 
@@ -139,13 +156,3 @@ var project = {
 	//display: function() {
 
 }
-
-
-// 	project.display = function( ) {
-
-// 		for(i=0; i < project.length; i++) {
-// 		$("#projects").append("HTMLprojectStart");
-// 	}
-// 	}
-
-
