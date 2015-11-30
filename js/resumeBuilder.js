@@ -101,9 +101,9 @@ var education = {
     	}
     }
 
-//education.display();
-
     }
+
+education.display();
 
 var work = {
 
@@ -147,12 +147,29 @@ var project = {
 	projects: [
 	{
 		"title": "My Test Project",
-		"start": 2015,
+		//"start": 2015,
 		"description": "a resume project for myself",
 		"dates": "April 2016",
-		"url": "http://placehold.it/500X350"
+		"url": "http://placehold.it/350X350"
 	}
 	], 
-	//display: function() {
+	display: function() {
+			if (project.projects.length > 0 ) {
+				$("#projects").append(HTMLprojectStart);
 
-}
+			for (var i = 0; i < project.projects.length; i++) {
+					var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.projects[i].title);
+					var formattedProjectDates = HTMLprojectDates.replace("%data%", project.projects[i].dates);
+					var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[i].description);
+					var formattedProjectImage = HTMLprojectImage.replace("%data%", project.projects[i].url);
+					$(".proejct-entry:last").append(formattedProjectTitle);
+					$(".project-entry:last").append(formattedProjectDates);
+					$(".project-entry:last").append(formattedDescription);
+					$(".project-entry:last").append(formattedProjectImage);
+
+				}
+			}
+		}
+};
+
+project.display();
