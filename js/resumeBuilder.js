@@ -150,7 +150,8 @@ var project = {
 		//"start": 2015,
 		"description": "a resume project for myself",
 		"dates": "April 2016",
-		"url": "http://placehold.it/350X350"
+		"url": "http://placehold.it/350X350",
+		"urltwo": "http://placehold.it/350X350"
 	}
 	], 
 	display: function() {
@@ -162,10 +163,13 @@ var project = {
 					var formattedProjectDates = HTMLprojectDates.replace("%data%", project.projects[i].dates);
 					var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[i].description);
 					var formattedProjectImage = HTMLprojectImage.replace("%data%", project.projects[i].url);
+					var formattedProjectImage2 = HTMLprojectImage.replace("%data%", project.projects[i].urltwo);
 					$(".proejct-entry:last").append(formattedProjectTitle);
 					$(".project-entry:last").append(formattedProjectDates);
 					$(".project-entry:last").append(formattedDescription);
 					$(".project-entry:last").append(formattedProjectImage);
+					$(".project-entry:last").append(formattedProjectImage2);
+
 
 				}
 			}
@@ -173,3 +177,15 @@ var project = {
 };
 
 project.display();
+
+
+function locationizer(work) {
+    var locationList = [];
+    for(job in work.jobs) {
+            var nextLocation = work.jobs[i].location;
+            console.log(nextLocation);
+            locationList.push(nextLocation);
+        }
+
+        return locationList;
+    };
