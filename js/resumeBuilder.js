@@ -6,7 +6,7 @@
 var bio = {
 	name: "Benjamin Clarke", 
 	role: "Developer", 
-	contact: {
+	contacts: {
 		mobile: "614-607-1010",  
 		email: "name@email.com", 
 		github: "BenClarke", 
@@ -40,12 +40,12 @@ var bio = {
 			}		
 
 		}
-			var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile); 
-			var formattedAddress = HTMLcontactGeneric.replace("%data%", bio.contact.address);
-			var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-			var formattedGitHub = HTMLgithub.replace("%data%", bio.contact.github);
-			var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-			var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+			var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile); 
+			var formattedAddress = HTMLcontactGeneric.replace("%data%", bio.contacts.address);
+			var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+			var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+			var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+			var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
 			$("#footerContacts").append(formattedMobile);
 			$("#footerContacts").append(formattedEmail);
@@ -189,3 +189,5 @@ function locationizer(work) {
 
         return locationList;
     };
+
+$("#mapDiv").append(googleMap);
