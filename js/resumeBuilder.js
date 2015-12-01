@@ -15,7 +15,7 @@ var bio = {
 		}, 
 		welcomeMessage : "Welcome to the Test Page", 
 	skills: ["leadership", "sales", "python", "data science" ], 
-	picture: "http://placehold.it/400X250", 
+	biopic: "http://placehold.it/400X250", 
 	display: function() {
 		var formattedName = HTMLheaderName.replace("%data%", bio.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -25,7 +25,7 @@ var bio = {
 		
 		
 		var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-		var formattedImage = HTMLbioPic.replace("%data%", bio.picture);
+		var formattedImage = HTMLbioPic.replace("%data%", bio.biopic);
 
 		$("#header").append(formattedWelcomeMessage); 
 		$("#header").append(formattedImage);
@@ -51,7 +51,13 @@ var bio = {
 			$("#footerContacts").append(formattedEmail);
 			$("#footerContacts").append(formattedGitHub);
 			$("#footerContacts").append(formattedTwitter);
-			$("#footerContacts").append(formattedLocation); 
+			$("#footerContacts").append(formattedLocation);
+
+			$("#header").append(formattedMobile);
+			$("#header").append(formattedEmail);
+			$("#header").append(formattedGitHub);
+			$("#header").append(formattedTwitter);
+			$("#header").append(formattedLocation); 
 	}
 
 };
@@ -109,7 +115,7 @@ var work = {
 
 	jobs: [
 		{
-		"position": "Regular Jo",
+		"title": "Regular Jo",
 		"employer": "Genormous",
 		"dates": "2014-2015",
 		"location": "Ohio",
@@ -121,7 +127,7 @@ var work = {
 
 				for (var i = 0; i < work.jobs.length; i++) {
 					$("#workExperience").append(HTMLworkStart);
-					var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].position);
+					var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
 					var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
 					var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 					var formattedDates = HTMLworkDates.replace("%data%", work.jobs[i].dates);
@@ -150,8 +156,7 @@ var project = {
 		//"start": 2015,
 		"description": "a resume project for myself",
 		"dates": "April 2016",
-		"url": "http://placehold.it/350X350",
-		"urltwo": "http://placehold.it/350X350"
+		"images": ["http://placehold.it/350X350", "http://placehold.it/350X350"] 
 	}
 	], 
 	display: function() {
@@ -162,13 +167,16 @@ var project = {
 					var formattedProjectTitle = HTMLprojectTitle.replace("%data%", project.projects[i].title);
 					var formattedProjectDates = HTMLprojectDates.replace("%data%", project.projects[i].dates);
 					var formattedDescription = HTMLprojectDescription.replace("%data%", project.projects[i].description);
-					var formattedProjectImage = HTMLprojectImage.replace("%data%", project.projects[i].url);
-					var formattedProjectImage2 = HTMLprojectImage.replace("%data%", project.projects[i].urltwo);
+					
+					for (var index in project.projects.images) {
+					var formattedProjectImage = HTMLprojectImage.replace("%data%", project.projects.images[index]);
+					$(".project-entry:last").append(formattedProjectImage);
+
+				}
 					$(".proejct-entry:last").append(formattedProjectTitle);
 					$(".project-entry:last").append(formattedProjectDates);
 					$(".project-entry:last").append(formattedDescription);
-					$(".project-entry:last").append(formattedProjectImage);
-					$(".project-entry:last").append(formattedProjectImage2);
+
 
 
 				}
